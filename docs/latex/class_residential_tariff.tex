@@ -1,0 +1,71 @@
+\doxysection{Residential\+Tariff Class Reference}
+\hypertarget{class_residential_tariff}{}\label{class_residential_tariff}\index{ResidentialTariff@{ResidentialTariff}}
+
+
+{\ttfamily \#include $<$tariff.\+hpp$>$}
+
+Inheritance diagram for Residential\+Tariff\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_residential_tariff}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_residential_tariff_a34fa3522a21e1caa7564b15648ac4460}{get\+Tariff\+Info}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_tariff}{Tariff}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_tariff_a94d6c4306746f29c5563660b4142660d}{\texorpdfstring{$\sim$}{\string~}\+Tariff}} ()=default
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \mbox{\hyperlink{class_tariff_ac3b63fe157bb5c34813c4f7daa08874b}{read\+Tariff\+From\+CSV}} (const std\+::string \&\mbox{\hyperlink{class_tariff_aa139133ef763e7f1b1e211b9854de416}{type}}) const
+\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{class_tariff_add81e219b53ffae6c2ef4a754cebdb20}{read\+Industrial\+Tariff\+From\+CSV}} () const
+\item 
+double \mbox{\hyperlink{class_tariff_a6aa8c8caad78d2ca8df8e9d5eb11ab33}{get\+Multiplier}} (const int \&period) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_tariff}{Tariff}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_tariff_aa139133ef763e7f1b1e211b9854de416}{type}}
+\item 
+std\+::string \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}}
+\item 
+double \mbox{\hyperlink{class_tariff_a38145f8036fcf5f26abfcc5dc8079352}{price}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_residential_tariff_a34fa3522a21e1caa7564b15648ac4460}\index{ResidentialTariff@{ResidentialTariff}!getTariffInfo@{getTariffInfo}}
+\index{getTariffInfo@{getTariffInfo}!ResidentialTariff@{ResidentialTariff}}
+\doxysubsubsection{\texorpdfstring{getTariffInfo()}{getTariffInfo()}}
+{\footnotesize\ttfamily \label{class_residential_tariff_a34fa3522a21e1caa7564b15648ac4460} 
+std\+::string Residential\+Tariff\+::get\+Tariff\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_tariff_a45066074ca2f1f48435631ebb5affa48}{Tariff}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{auto}\ tariff\ =\ \mbox{\hyperlink{class_tariff_ac3b63fe157bb5c34813c4f7daa08874b}{readTariffFromCSV}}(\textcolor{stringliteral}{"{}Residential"{}});}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}}\ :\ tariff)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}}.first\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}}.second\ <<\ std::endl;}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Residential\ tariff\ info\ displayed"{}};}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/models/\mbox{\hyperlink{tariff_8hpp}{tariff.\+hpp}}\item 
+src/models/\mbox{\hyperlink{tariff_8cpp}{tariff.\+cpp}}\end{DoxyCompactItemize}

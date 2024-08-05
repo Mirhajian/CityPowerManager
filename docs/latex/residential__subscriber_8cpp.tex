@@ -1,0 +1,33 @@
+\doxysection{src/models/residential\+\_\+subscriber.cpp File Reference}
+\hypertarget{residential__subscriber_8cpp}{}\label{residential__subscriber_8cpp}\index{src/models/residential\_subscriber.cpp@{src/models/residential\_subscriber.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../../include/models/residential\+\_\+subscriber.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{residential__subscriber_8cpp_a7cf00d981492a71657e79e59fcc2797a}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} \&sub)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{residential__subscriber_8cpp_a7cf00d981492a71657e79e59fcc2797a}\index{residential\_subscriber.cpp@{residential\_subscriber.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!residential\_subscriber.cpp@{residential\_subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{residential__subscriber_8cpp_a7cf00d981492a71657e79e59fcc2797a} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} \&}]{sub}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ os\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a13b8745bbbb643341752c0f8ab8c78c1}{getName}}()}
+\DoxyCodeLine{00014\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Last\ Name:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a93f5ecb0a0d6d7d88dee3bbb7ac95528}{getLastName}}()}
+\DoxyCodeLine{00015\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ National\ ID:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a4f989cc64abc264ef82f7704dfa087c3}{getNationalID}}()}
+\DoxyCodeLine{00016\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Meter\ Number:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a23115e852e917a1c1d3d7ee144cf53be}{getMeterNumber}}()}
+\DoxyCodeLine{00017\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Installation\ Date:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a1ec0f0b56bbdaa2f9ccc48470dba3c19}{getInstallationDate}}()}
+\DoxyCodeLine{00018\ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Debt:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_afe48dbfe4b9b50b955e37434fb849bbe}{getDebt}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}

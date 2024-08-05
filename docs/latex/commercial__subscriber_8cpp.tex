@@ -1,0 +1,34 @@
+\doxysection{src/models/commercial\+\_\+subscriber.cpp File Reference}
+\hypertarget{commercial__subscriber_8cpp}{}\label{commercial__subscriber_8cpp}\index{src/models/commercial\_subscriber.cpp@{src/models/commercial\_subscriber.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../../include/models/commercial\+\_\+subscriber.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{commercial__subscriber_8cpp_ac696fd954c0f4088ba7efc296b276967}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} \&sub)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{commercial__subscriber_8cpp_ac696fd954c0f4088ba7efc296b276967}\index{commercial\_subscriber.cpp@{commercial\_subscriber.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!commercial\_subscriber.cpp@{commercial\_subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{commercial__subscriber_8cpp_ac696fd954c0f4088ba7efc296b276967} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} \&}]{sub}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a13b8745bbbb643341752c0f8ab8c78c1}{getName}}()}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Last\ Name:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a93f5ecb0a0d6d7d88dee3bbb7ac95528}{getLastName}}()}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ National\ ID:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a4f989cc64abc264ef82f7704dfa087c3}{getNationalID}}()}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Meter\ Number:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a23115e852e917a1c1d3d7ee144cf53be}{getMeterNumber}}()}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Installation\ Date:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a1ec0f0b56bbdaa2f9ccc48470dba3c19}{getInstallationDate}}()}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Meter\ Capacity:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_commercial_subscriber_ac803ba47cc6c30bf1061ff76707b1d0e}{getMeterCapacity}}()}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Business\ License:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_commercial_subscriber_ac15230a29834f7bc5e9caa21c8f7151c}{getBusinessLicense}}()}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Debt:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_afe48dbfe4b9b50b955e37434fb849bbe}{getDebt}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\doxysection{include/models/tariff.hpp File Reference}
+\hypertarget{tariff_8hpp}{}\label{tariff_8hpp}\index{include/models/tariff.hpp@{include/models/tariff.hpp}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_tariff}{Tariff}}
+\item 
+class \mbox{\hyperlink{class_residential_tariff}{Residential\+Tariff}}
+\item 
+class \mbox{\hyperlink{class_commercial_tariff}{Commercial\+Tariff}}
+\item 
+class \mbox{\hyperlink{class_industrial_tariff}{Industrial\+Tariff}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_tariff}{Tariff}} $>$ \mbox{\hyperlink{tariff_8hpp_aab4a504d46228264b3ea94734f8a2c7a}{read\+Tariffs}} (const std\+::string \&filename)
+\item 
+void \mbox{\hyperlink{tariff_8hpp_ad7729d219f73d1c82fecbc1e45eb6ff9}{write\+Tariffs}} (const std\+::string \&filename, const std\+::vector$<$ \mbox{\hyperlink{class_tariff}{Tariff}} $>$ \&tariffs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tariff_8hpp_aab4a504d46228264b3ea94734f8a2c7a}\index{tariff.hpp@{tariff.hpp}!readTariffs@{readTariffs}}
+\index{readTariffs@{readTariffs}!tariff.hpp@{tariff.hpp}}
+\doxysubsubsection{\texorpdfstring{readTariffs()}{readTariffs()}}
+{\footnotesize\ttfamily \label{tariff_8hpp_aab4a504d46228264b3ea94734f8a2c7a} 
+std\+::vector$<$ \mbox{\hyperlink{class_tariff}{Tariff}} $>$ read\+Tariffs (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tariff_8hpp_ad7729d219f73d1c82fecbc1e45eb6ff9}\index{tariff.hpp@{tariff.hpp}!writeTariffs@{writeTariffs}}
+\index{writeTariffs@{writeTariffs}!tariff.hpp@{tariff.hpp}}
+\doxysubsubsection{\texorpdfstring{writeTariffs()}{writeTariffs()}}
+{\footnotesize\ttfamily \label{tariff_8hpp_ad7729d219f73d1c82fecbc1e45eb6ff9} 
+void write\+Tariffs (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_tariff}{Tariff}} $>$ \&}]{tariffs}{}\end{DoxyParamCaption})}
+

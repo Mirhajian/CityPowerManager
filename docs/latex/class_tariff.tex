@@ -1,0 +1,172 @@
+\doxysection{Tariff Class Reference}
+\hypertarget{class_tariff}{}\label{class_tariff}\index{Tariff@{Tariff}}
+
+
+{\ttfamily \#include $<$tariff.\+hpp$>$}
+
+Inheritance diagram for Tariff\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tariff}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_tariff_a94d6c4306746f29c5563660b4142660d}{\texorpdfstring{$\sim$}{\string~}\+Tariff}} ()=default
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \mbox{\hyperlink{class_tariff_ac3b63fe157bb5c34813c4f7daa08874b}{read\+Tariff\+From\+CSV}} (const std\+::string \&\mbox{\hyperlink{class_tariff_aa139133ef763e7f1b1e211b9854de416}{type}}) const
+\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{class_tariff_add81e219b53ffae6c2ef4a754cebdb20}{read\+Industrial\+Tariff\+From\+CSV}} () const
+\item 
+double \mbox{\hyperlink{class_tariff_a6aa8c8caad78d2ca8df8e9d5eb11ab33}{get\+Multiplier}} (const int \&period) const
+\item 
+virtual std\+::string \mbox{\hyperlink{class_tariff_a45066074ca2f1f48435631ebb5affa48}{get\+Tariff\+Info}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_tariff_aa139133ef763e7f1b1e211b9854de416}{type}}
+\item 
+std\+::string \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}}
+\item 
+double \mbox{\hyperlink{class_tariff_a38145f8036fcf5f26abfcc5dc8079352}{price}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tariff_a94d6c4306746f29c5563660b4142660d}\index{Tariff@{Tariff}!````~Tariff@{\texorpdfstring{$\sim$}{\string~}Tariff}}
+\index{````~Tariff@{\texorpdfstring{$\sim$}{\string~}Tariff}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Tariff()}{\string~Tariff()}}
+{\footnotesize\ttfamily \label{class_tariff_a94d6c4306746f29c5563660b4142660d} 
+virtual Tariff\+::\texorpdfstring{$\sim$}{\string~}\+Tariff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tariff_a6aa8c8caad78d2ca8df8e9d5eb11ab33}\index{Tariff@{Tariff}!getMultiplier@{getMultiplier}}
+\index{getMultiplier@{getMultiplier}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{getMultiplier()}{getMultiplier()}}
+{\footnotesize\ttfamily \label{class_tariff_a6aa8c8caad78d2ca8df8e9d5eb11ab33} 
+double Tariff\+::get\+Multiplier (\begin{DoxyParamCaption}\item[{const int \&}]{period}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordflow}{switch}\ (period)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ \textcolor{keywordflow}{return}\ 1.0;\ \ \textcolor{comment}{//\ 12\ am\ to\ 6\ am:\ medium}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \textcolor{keywordflow}{return}\ 0.5;\ \ \textcolor{comment}{//\ 6\ am\ to\ 12\ pm:\ light}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \textcolor{keywordflow}{return}\ 2.0;\ \ \textcolor{comment}{//\ 12\ pm\ to\ 6\ pm:\ peak}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \textcolor{keywordflow}{return}\ 1.0;\ \ \textcolor{comment}{//\ 6\ pm\ to\ 12\ am:\ medium}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ 1.0;}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_tariff_a45066074ca2f1f48435631ebb5affa48}\index{Tariff@{Tariff}!getTariffInfo@{getTariffInfo}}
+\index{getTariffInfo@{getTariffInfo}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{getTariffInfo()}{getTariffInfo()}}
+{\footnotesize\ttfamily \label{class_tariff_a45066074ca2f1f48435631ebb5affa48} 
+virtual std\+::string Tariff\+::get\+Tariff\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_commercial_tariff_ace48335927511c5c624973c5c6d7acb3}{Commercial\+Tariff}}, \mbox{\hyperlink{class_industrial_tariff_a5c403ffb46bcf3a823f628c263f79f86}{Industrial\+Tariff}}, and \mbox{\hyperlink{class_residential_tariff_a34fa3522a21e1caa7564b15648ac4460}{Residential\+Tariff}}.
+
+\Hypertarget{class_tariff_add81e219b53ffae6c2ef4a754cebdb20}\index{Tariff@{Tariff}!readIndustrialTariffFromCSV@{readIndustrialTariffFromCSV}}
+\index{readIndustrialTariffFromCSV@{readIndustrialTariffFromCSV}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{readIndustrialTariffFromCSV()}{readIndustrialTariffFromCSV()}}
+{\footnotesize\ttfamily \label{class_tariff_add81e219b53ffae6c2ef4a754cebdb20} 
+std\+::map$<$ std\+::string, double $>$ Tariff\+::read\+Industrial\+Tariff\+From\+CSV (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ std::map<std::string,\ double>\ tariff;}
+\DoxyCodeLine{00037\ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}../data/tariffs.csv"{}});}
+\DoxyCodeLine{00038\ \ \ std::string\ line;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ Skip\ header}}
+\DoxyCodeLine{00041\ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ csvType,\ \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ value;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::getline(iss,\ csvType,\ \textcolor{charliteral}{','})\ \&\&}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::getline(iss,\ \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}},\ \textcolor{charliteral}{','})\ \&\&}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ iss\ >>\ value)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (csvType\ ==\ \textcolor{stringliteral}{"{}Industrial"{}})\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ tariff[\mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}}]\ =\ value;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{return}\ tariff;}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_tariff_ac3b63fe157bb5c34813c4f7daa08874b}\index{Tariff@{Tariff}!readTariffFromCSV@{readTariffFromCSV}}
+\index{readTariffFromCSV@{readTariffFromCSV}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{readTariffFromCSV()}{readTariffFromCSV()}}
+{\footnotesize\ttfamily \label{class_tariff_ac3b63fe157bb5c34813c4f7daa08874b} 
+std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ Tariff\+::read\+Tariff\+From\+CSV (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ std::vector<std::pair<std::string,\ double>>\ tariff;}
+\DoxyCodeLine{00012\ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}../data/tariffs.csv"{}});}
+\DoxyCodeLine{00013\ \ \ std::string\ line;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \textcolor{comment}{//\ Skip\ header}}
+\DoxyCodeLine{00016\ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ csvType,\ \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ value;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::getline(iss,\ csvType,\ \textcolor{charliteral}{','})\ \&\&}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::getline(iss,\ \mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}},\ \textcolor{charliteral}{','})\ \&\&}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ iss\ >>\ value)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (csvType\ ==\ \mbox{\hyperlink{class_tariff_aa139133ef763e7f1b1e211b9854de416}{type}})\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ tariff.emplace\_back(\mbox{\hyperlink{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}{tier}},\ value);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordflow}{return}\ tariff;}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_tariff_a38145f8036fcf5f26abfcc5dc8079352}\index{Tariff@{Tariff}!price@{price}}
+\index{price@{price}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily \label{class_tariff_a38145f8036fcf5f26abfcc5dc8079352} 
+double Tariff\+::price}
+
+\Hypertarget{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32}\index{Tariff@{Tariff}!tier@{tier}}
+\index{tier@{tier}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{tier}{tier}}
+{\footnotesize\ttfamily \label{class_tariff_a117a2728ca2bc922c26ba2a9b1bf3f32} 
+std\+::string Tariff\+::tier}
+
+\Hypertarget{class_tariff_aa139133ef763e7f1b1e211b9854de416}\index{Tariff@{Tariff}!type@{type}}
+\index{type@{type}!Tariff@{Tariff}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{class_tariff_aa139133ef763e7f1b1e211b9854de416} 
+std\+::string Tariff\+::type}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/models/\mbox{\hyperlink{tariff_8hpp}{tariff.\+hpp}}\item 
+src/models/\mbox{\hyperlink{tariff_8cpp}{tariff.\+cpp}}\end{DoxyCompactItemize}

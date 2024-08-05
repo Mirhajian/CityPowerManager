@@ -1,0 +1,37 @@
+\doxysection{src/models/industrial\+\_\+subscriber.cpp File Reference}
+\hypertarget{industrial__subscriber_8cpp}{}\label{industrial__subscriber_8cpp}\index{src/models/industrial\_subscriber.cpp@{src/models/industrial\_subscriber.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../../include/models/industrial\+\_\+subscriber.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{industrial__subscriber_8cpp_a92ac967758e0ac9dc670924ef3b9f416}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} \&sub)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{industrial__subscriber_8cpp_a92ac967758e0ac9dc670924ef3b9f416}\index{industrial\_subscriber.cpp@{industrial\_subscriber.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!industrial\_subscriber.cpp@{industrial\_subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{industrial__subscriber_8cpp_a92ac967758e0ac9dc670924ef3b9f416} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} \&}]{sub}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a13b8745bbbb643341752c0f8ab8c78c1}{getName}}()}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Last\ Name:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a93f5ecb0a0d6d7d88dee3bbb7ac95528}{getLastName}}()}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ National\ ID:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a4f989cc64abc264ef82f7704dfa087c3}{getNationalID}}()}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Meter\ Number:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a23115e852e917a1c1d3d7ee144cf53be}{getMeterNumber}}()}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Installation\ Date:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_a1ec0f0b56bbdaa2f9ccc48470dba3c19}{getInstallationDate}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Unit\ Number:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_industrial_subscriber_a3dd15e614aca28dc95d2446ffbf693bd}{getUnitName}}()}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Voltage\ Level:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_industrial_subscriber_ad75725f43e48a23c7d95c52ec00fe439}{getSupplyVoltage}}()}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Connection\ Type:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_industrial_subscriber_a0297536c534b37a80841fb02f5b4bccf}{getConnectionType}}()}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Transformer\ Capacity:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_industrial_subscriber_a226926907cf45e355c68ac71cc27f2af}{getTransformerRatio}}()}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Meter\ meterMultiplier:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_industrial_subscriber_afaa29e37eaf91bcb0cb6fd53a7cca9ea}{getMeterMultiplier}}()}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Debt:\ "{}}\ <<\ sub.\mbox{\hyperlink{class_subscriber_afe48dbfe4b9b50b955e37434fb849bbe}{getDebt}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,255 @@
+\doxysection{File\+IO Class Reference}
+\hypertarget{class_file_i_o}{}\label{class_file_i_o}\index{FileIO@{FileIO}}
+
+
+{\ttfamily \#include $<$file\+\_\+io.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_file_i_o_af192a79dcce060f15e49771c607b5fa6}{read\+Tariffs\+From\+CSV}} (const std\+::string \&filename)
+\item 
+void \mbox{\hyperlink{class_file_i_o_ac9e3e9a7b6891898095ddd0af7c5b117}{write\+Tariffs\+To\+CSV}} (const std\+::string \&filename, const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&tariffs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_file_i_o_a6abbeca8b223c9a029ade6513d280e30}{split\+CSVLine}} (const std\+::string \&line)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} $>$ \mbox{\hyperlink{class_file_i_o_ab628214d3b94f9af7bbaeec7979ea3a9}{read\+Residential\+Subscribers}} (const std\+::string \&filename)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} $>$ \mbox{\hyperlink{class_file_i_o_a32ff41a0e20fbcb8adba0f0f57845950}{read\+Commercial\+Subscribers}} (const std\+::string \&filename)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} $>$ \mbox{\hyperlink{class_file_i_o_aa525ccdd106d3e3f98fac26a9db71fb7}{read\+Industrial\+Subscribers}} (const std\+::string \&filename)
+\item 
+static void \mbox{\hyperlink{class_file_i_o_a9d4626aeb0fef212defa1f278c946cc7}{write\+Residential\+Subscribers}} (const std\+::string \&filename, const std\+::vector$<$ \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} $>$ \&subscribers)
+\item 
+static void \mbox{\hyperlink{class_file_i_o_aebbab092eef2c1dc5717516fa0625c6a}{write\+Commercial\+Subscribers}} (const std\+::string \&filename, const std\+::vector$<$ \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} $>$ \&subscribers)
+\item 
+static void \mbox{\hyperlink{class_file_i_o_a54748194a0e7ad89611b92bd0125461b}{write\+Industrial\+Subscribers}} (const std\+::string \&filename, const std\+::vector$<$ \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} $>$ \&subscribers)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_file_i_o_a32ff41a0e20fbcb8adba0f0f57845950}\index{FileIO@{FileIO}!readCommercialSubscribers@{readCommercialSubscribers}}
+\index{readCommercialSubscribers@{readCommercialSubscribers}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{readCommercialSubscribers()}{readCommercialSubscribers()}}
+{\footnotesize\ttfamily \label{class_file_i_o_a32ff41a0e20fbcb8adba0f0f57845950} 
+std\+::vector$<$ \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} $>$ File\+IO\+::read\+Commercial\+Subscribers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ std::vector<CommercialSubscriber>\ subscribers;}
+\DoxyCodeLine{00037\ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00038\ \ \ std::string\ line;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ Skip\ header}}
+\DoxyCodeLine{00041\ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{auto}\ parts\ =\ \mbox{\hyperlink{class_file_i_o_a6abbeca8b223c9a029ade6513d280e30}{splitCSVLine}}(line);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (parts.size()\ ==\ 8)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ subscribers.emplace\_back(parts[0],\ parts[1],\ parts[2],\ parts[3],\ parts[4],\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stod(parts[5]),\ parts[6]);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ subscribers.back().setDebt(std::stod(parts[7]));}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordflow}{return}\ subscribers;}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_aa525ccdd106d3e3f98fac26a9db71fb7}\index{FileIO@{FileIO}!readIndustrialSubscribers@{readIndustrialSubscribers}}
+\index{readIndustrialSubscribers@{readIndustrialSubscribers}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{readIndustrialSubscribers()}{readIndustrialSubscribers()}}
+{\footnotesize\ttfamily \label{class_file_i_o_aa525ccdd106d3e3f98fac26a9db71fb7} 
+std\+::vector$<$ \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} $>$ File\+IO\+::read\+Industrial\+Subscribers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ std::vector<IndustrialSubscriber>\ subscribers;}
+\DoxyCodeLine{00056\ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00057\ \ \ std::string\ line;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Skip\ header}}
+\DoxyCodeLine{00060\ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{auto}\ parts\ =\ \mbox{\hyperlink{class_file_i_o_a6abbeca8b223c9a029ade6513d280e30}{splitCSVLine}}(line);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (parts.size()\ ==\ 11)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ subscribers.emplace\_back(parts[0],\ parts[1],\ parts[2],\ parts[3],\ parts[4],\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parts[5],\ std::stod(parts[6]),\ parts[7],\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stod(parts[8]),\ std::stod(parts[9]));}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ subscribers.back().setDebt(std::stod(parts[10]));}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordflow}{return}\ subscribers;}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_ab628214d3b94f9af7bbaeec7979ea3a9}\index{FileIO@{FileIO}!readResidentialSubscribers@{readResidentialSubscribers}}
+\index{readResidentialSubscribers@{readResidentialSubscribers}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{readResidentialSubscribers()}{readResidentialSubscribers()}}
+{\footnotesize\ttfamily \label{class_file_i_o_ab628214d3b94f9af7bbaeec7979ea3a9} 
+std\+::vector$<$ \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} $>$ File\+IO\+::read\+Residential\+Subscribers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ std::vector<ResidentialSubscriber>\ subscribers;}
+\DoxyCodeLine{00019\ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00020\ \ \ std::string\ line;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//\ Skip\ header}}
+\DoxyCodeLine{00023\ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{auto}\ parts\ =\ \mbox{\hyperlink{class_file_i_o_a6abbeca8b223c9a029ade6513d280e30}{splitCSVLine}}(line);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (parts.size()\ ==\ 6)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ subscribers.emplace\_back(parts[0],\ parts[1],\ parts[2],\ parts[3],\ parts[4]);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ subscribers.back().setDebt(std::stod(parts[5]));}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordflow}{return}\ subscribers;}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_af192a79dcce060f15e49771c607b5fa6}\index{FileIO@{FileIO}!readTariffsFromCSV@{readTariffsFromCSV}}
+\index{readTariffsFromCSV@{readTariffsFromCSV}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{readTariffsFromCSV()}{readTariffsFromCSV()}}
+{\footnotesize\ttfamily \label{class_file_i_o_af192a79dcce060f15e49771c607b5fa6} 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ File\+IO\+::read\+Tariffs\+From\+CSV (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ std::vector<std::vector<std::string>>\ tariffs;}
+\DoxyCodeLine{00107\ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00108\ \ \ std::string\ line;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ std::vector<std::string>\ row;}
+\DoxyCodeLine{00112\ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00113\ \ \ \ \ std::string\ item;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(ss,\ item,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ row.push\_back(item);}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ tariffs.push\_back(row);}
+\DoxyCodeLine{00120\ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordflow}{return}\ tariffs;}
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_a6abbeca8b223c9a029ade6513d280e30}\index{FileIO@{FileIO}!splitCSVLine@{splitCSVLine}}
+\index{splitCSVLine@{splitCSVLine}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{splitCSVLine()}{splitCSVLine()}}
+{\footnotesize\ttfamily \label{class_file_i_o_a6abbeca8b223c9a029ade6513d280e30} 
+std\+::vector$<$ std\+::string $>$ File\+IO\+::split\+CSVLine (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ std::vector<std::string>\ result;}
+\DoxyCodeLine{00009\ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00010\ \ \ std::string\ item;}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordflow}{while}\ (std::getline(ss,\ item,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ result.push\_back(item);}
+\DoxyCodeLine{00013\ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_aebbab092eef2c1dc5717516fa0625c6a}\index{FileIO@{FileIO}!writeCommercialSubscribers@{writeCommercialSubscribers}}
+\index{writeCommercialSubscribers@{writeCommercialSubscribers}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{writeCommercialSubscribers()}{writeCommercialSubscribers()}}
+{\footnotesize\ttfamily \label{class_file_i_o_aebbab092eef2c1dc5717516fa0625c6a} 
+void File\+IO\+::write\+Commercial\+Subscribers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} $>$ \&}]{subscribers}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ std::ofstream\ file(filename);}
+\DoxyCodeLine{00085\ \ \ file\ <<\ \textcolor{stringliteral}{"{}Name,LastName,NationalID,MeterNumber,InstallationDate,MeterCapacity,BusinessLicense,Debt\(\backslash\)n"{}};}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ sub\ :\ subscribers)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ file\ <<\ sub.getName()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getLastName()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getNationalID()\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ <<\ sub.getMeterNumber()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getInstallationDate()\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ <<\ sub.getMeterCapacity()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getBusinessLicense()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getDebt()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00090\ \ \ \}}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_a54748194a0e7ad89611b92bd0125461b}\index{FileIO@{FileIO}!writeIndustrialSubscribers@{writeIndustrialSubscribers}}
+\index{writeIndustrialSubscribers@{writeIndustrialSubscribers}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{writeIndustrialSubscribers()}{writeIndustrialSubscribers()}}
+{\footnotesize\ttfamily \label{class_file_i_o_a54748194a0e7ad89611b92bd0125461b} 
+void File\+IO\+::write\+Industrial\+Subscribers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} $>$ \&}]{subscribers}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ std::ofstream\ file(filename);}
+\DoxyCodeLine{00095\ \ \ file\ <<\ \textcolor{stringliteral}{"{}Name,LastName,NationalID,MeterNumber,InstallationDate,UnitName,SupplyVoltage,ConnectionType,MeterMultiplier,TransformerRatio,Debt\(\backslash\)n"{}};}
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ sub\ :\ subscribers)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ file\ <<\ sub.getName()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getLastName()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getNationalID()\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ <<\ sub.getMeterNumber()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getInstallationDate()\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ <<\ sub.getUnitName()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getSupplyVoltage()\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ <<\ sub.getConnectionType()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getMeterMultiplier()\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ <<\ sub.getTransformerRatio()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getDebt()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_a9d4626aeb0fef212defa1f278c946cc7}\index{FileIO@{FileIO}!writeResidentialSubscribers@{writeResidentialSubscribers}}
+\index{writeResidentialSubscribers@{writeResidentialSubscribers}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{writeResidentialSubscribers()}{writeResidentialSubscribers()}}
+{\footnotesize\ttfamily \label{class_file_i_o_a9d4626aeb0fef212defa1f278c946cc7} 
+void File\+IO\+::write\+Residential\+Subscribers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} $>$ \&}]{subscribers}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ std::ofstream\ file(filename);}
+\DoxyCodeLine{00076\ \ \ file\ <<\ \textcolor{stringliteral}{"{}Name,LastName,NationalID,MeterNumber,InstallationDate,Debt\(\backslash\)n"{}};}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ sub\ :\ subscribers)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ file\ <<\ sub.getName()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getLastName()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getNationalID()\ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ <<\ sub.getMeterNumber()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getInstallationDate()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ sub.getDebt()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_file_i_o_ac9e3e9a7b6891898095ddd0af7c5b117}\index{FileIO@{FileIO}!writeTariffsToCSV@{writeTariffsToCSV}}
+\index{writeTariffsToCSV@{writeTariffsToCSV}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{writeTariffsToCSV()}{writeTariffsToCSV()}}
+{\footnotesize\ttfamily \label{class_file_i_o_ac9e3e9a7b6891898095ddd0af7c5b117} 
+void File\+IO\+::write\+Tariffs\+To\+CSV (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&}]{tariffs}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ std::ofstream\ file(filename);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ row\ :\ tariffs)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ row.size();\ ++i)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ file\ <<\ row[i];}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ row.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00136\ \ \ \}}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/utils/\mbox{\hyperlink{file__io_8hpp}{file\+\_\+io.\+hpp}}\item 
+src/utils/\mbox{\hyperlink{file__io_8cpp}{file\+\_\+io.\+cpp}}\end{DoxyCompactItemize}

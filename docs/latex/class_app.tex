@@ -1,0 +1,158 @@
+\doxysection{App Class Reference}
+\hypertarget{class_app}{}\label{class_app}\index{App@{App}}
+
+
+{\ttfamily \#include $<$app.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_app_a6053980952c45c1bd3bd97b8b059602c}{display\+Tariffs}} ()
+\item 
+\mbox{\hyperlink{class_app_acb8cbf3e285b91d0170ffe87df5989c5}{App}} ()
+\item 
+\mbox{\hyperlink{class_app_a34f1f253b1cef5f4ecbac66eaf6964ec}{\texorpdfstring{$\sim$}{\string~}\+App}} ()
+\item 
+void \mbox{\hyperlink{class_app_ae09dc71078b64c56c673b1ad1d25b5d1}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} $>$ \mbox{\hyperlink{class_app_ace83eb8d46115147858b793726cb270e}{residential\+Subscribers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} $>$ \mbox{\hyperlink{class_app_a9335db4eb3ab6a3fe4325c62ad4a4ae9}{commercial\+Subscribers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} $>$ \mbox{\hyperlink{class_app_a23604094de773a7941d27a84bbd7032b}{industrial\+Subscribers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_app_acb8cbf3e285b91d0170ffe87df5989c5}\index{App@{App}!App@{App}}
+\index{App@{App}!App@{App}}
+\doxysubsubsection{\texorpdfstring{App()}{App()}}
+{\footnotesize\ttfamily \label{class_app_acb8cbf3e285b91d0170ffe87df5989c5} 
+App\+::\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ comment\ the\ clearScreen();\ method\ in\ the\ App::run()\ method\ to\ ...}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ show\ the\ database\ info\ to\ debug\ databases\ in\ /data}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_app_ace83eb8d46115147858b793726cb270e}{residentialSubscribers}}\ =\ fileIO.\mbox{\hyperlink{class_file_i_o_ab628214d3b94f9af7bbaeec7979ea3a9}{readResidentialSubscribers}}(\textcolor{stringliteral}{"{}../data/residential\_subscribers.csv"{}});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_app_a9335db4eb3ab6a3fe4325c62ad4a4ae9}{commercialSubscribers}}\ =\ fileIO.\mbox{\hyperlink{class_file_i_o_a32ff41a0e20fbcb8adba0f0f57845950}{readCommercialSubscribers}}(\textcolor{stringliteral}{"{}../data/commercial\_subscribers.csv"{}});}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_app_a23604094de773a7941d27a84bbd7032b}{industrialSubscribers}}\ =\ fileIO.\mbox{\hyperlink{class_file_i_o_aa525ccdd106d3e3f98fac26a9db71fb7}{readIndustrialSubscribers}}(\textcolor{stringliteral}{"{}../data/industrial\_subscribers.csv"{}});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ tariffs.emplace\_back(std::make\_unique<ResidentialTariff>());}
+\DoxyCodeLine{00020\ \ \ \ \ tariffs.emplace\_back(std::make\_unique<CommercialTariff>());}
+\DoxyCodeLine{00021\ \ \ \ \ tariffs.emplace\_back(std::make\_unique<IndustrialTariff>());}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ tariffs\ =\ fileIO.readTariffs("{}../data/tariffs.csv"{});\ \ //\ DEPRICATED:\ replaced\ by\ above\ approach\ with\ unique\_ptr}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loaded\ "{}}\ <<\ \mbox{\hyperlink{class_app_ace83eb8d46115147858b793726cb270e}{residentialSubscribers}}.size()\ <<\ \textcolor{stringliteral}{"{}\ residential\ subscribers.\(\backslash\)n"{}};}
+\DoxyCodeLine{00025\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loaded\ "{}}\ <<\ \mbox{\hyperlink{class_app_a9335db4eb3ab6a3fe4325c62ad4a4ae9}{commercialSubscribers}}.size()\ <<\ \textcolor{stringliteral}{"{}\ commercial\ subscribers.\(\backslash\)n"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loaded\ "{}}\ <<\ \mbox{\hyperlink{class_app_a23604094de773a7941d27a84bbd7032b}{industrialSubscribers}}.size()\ <<\ \textcolor{stringliteral}{"{}\ industrial\ subscribers.\(\backslash\)n"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loaded\ "{}}\ <<\ tariffs.size()\ <<\ \textcolor{stringliteral}{"{}\ tariffs.\(\backslash\)n"{}};}
+\DoxyCodeLine{00028\ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ loading\ data:\ "{}}\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_app_a34f1f253b1cef5f4ecbac66eaf6964ec}\index{App@{App}!````~App@{\texorpdfstring{$\sim$}{\string~}App}}
+\index{````~App@{\texorpdfstring{$\sim$}{\string~}App}!App@{App}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}App()}{\string~App()}}
+{\footnotesize\ttfamily \label{class_app_a34f1f253b1cef5f4ecbac66eaf6964ec} 
+App\+::\texorpdfstring{$\sim$}{\string~}\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ DEPRICATED,\ unique\_ptrs\ handle\ their\ own\ memory,\ no\ need\ to\ ...}}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ delete\ their\ memory}}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ for\ (auto\ tariff\ :\ tariffs)\ \{}}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ \ \ \ \ delete\ tariff;}}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_app_a6053980952c45c1bd3bd97b8b059602c}\index{App@{App}!displayTariffs@{displayTariffs}}
+\index{displayTariffs@{displayTariffs}!App@{App}}
+\doxysubsubsection{\texorpdfstring{displayTariffs()}{displayTariffs()}}
+{\footnotesize\ttfamily \label{class_app_a6053980952c45c1bd3bd97b8b059602c} 
+void App\+::display\+Tariffs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00449\ \ \ clearScreen();}
+\DoxyCodeLine{00450\ \ \ std::cout\ <<\ \mbox{\hyperlink{namespace_city_power_manager_1_1_art_a234dc4d981953cbbd96d91f3c34b91b6}{CityPowerManager::Art::DISPLAY\_TARIFFS}}\ <<\ std::endl;}
+\DoxyCodeLine{00451\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Displaying\ Tariffs:\(\backslash\)n"{}};}
+\DoxyCodeLine{00452\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ tariff\ :\ tariffs)\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ std::cout\ <<\ tariff-\/>getTariffInfo()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00455\ \ \ \}}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Press\ return\ to\ get\ back."{};}}
+\DoxyCodeLine{00458\ \ \ \textcolor{comment}{//\ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ '\(\backslash\)n');}}
+\DoxyCodeLine{00459\ \ \ \textcolor{comment}{//\ std::cin.get();}}
+\DoxyCodeLine{00460\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_app_ae09dc71078b64c56c673b1ad1d25b5d1}\index{App@{App}!run@{run}}
+\index{run@{run}!App@{App}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_app_ae09dc71078b64c56c673b1ad1d25b5d1} 
+void App\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00515\ \ \ \textcolor{keywordtype}{char}\ choice;}
+\DoxyCodeLine{00516\ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00517\ \ \ \ \ clearScreen();\ \ \textcolor{comment}{//\ Comment\ here\ if\ you\ want\ to\ debug\ databases}}
+\DoxyCodeLine{00518\ \ \ \ \ showMainMenu();}
+\DoxyCodeLine{00519\ \ \ \ \ std::cin\ >>\ choice;}
+\DoxyCodeLine{00520\ \ \ \ \ handleMenuOption(choice);}
+\DoxyCodeLine{00521\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00522\ \ \ \}\ \textcolor{keywordflow}{while}\ (choice\ !=\ \textcolor{charliteral}{'8'});}
+\DoxyCodeLine{00523\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00016}{main()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_app_a9335db4eb3ab6a3fe4325c62ad4a4ae9}\index{App@{App}!commercialSubscribers@{commercialSubscribers}}
+\index{commercialSubscribers@{commercialSubscribers}!App@{App}}
+\doxysubsubsection{\texorpdfstring{commercialSubscribers}{commercialSubscribers}}
+{\footnotesize\ttfamily \label{class_app_a9335db4eb3ab6a3fe4325c62ad4a4ae9} 
+std\+::vector$<$\mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}}$>$ App\+::commercial\+Subscribers}
+
+\Hypertarget{class_app_a23604094de773a7941d27a84bbd7032b}\index{App@{App}!industrialSubscribers@{industrialSubscribers}}
+\index{industrialSubscribers@{industrialSubscribers}!App@{App}}
+\doxysubsubsection{\texorpdfstring{industrialSubscribers}{industrialSubscribers}}
+{\footnotesize\ttfamily \label{class_app_a23604094de773a7941d27a84bbd7032b} 
+std\+::vector$<$\mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}}$>$ App\+::industrial\+Subscribers}
+
+\Hypertarget{class_app_ace83eb8d46115147858b793726cb270e}\index{App@{App}!residentialSubscribers@{residentialSubscribers}}
+\index{residentialSubscribers@{residentialSubscribers}!App@{App}}
+\doxysubsubsection{\texorpdfstring{residentialSubscribers}{residentialSubscribers}}
+{\footnotesize\ttfamily \label{class_app_ace83eb8d46115147858b793726cb270e} 
+std\+::vector$<$\mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}}$>$ App\+::residential\+Subscribers}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{app_8hpp}{app.\+hpp}}\item 
+src/core/\mbox{\hyperlink{app_8cpp}{app.\+cpp}}\end{DoxyCompactItemize}

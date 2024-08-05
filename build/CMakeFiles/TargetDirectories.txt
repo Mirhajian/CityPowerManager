@@ -1,3 +1,0 @@
-/Users/abolfazlmirhajian/projects/finallCpp/build/CMakeFiles/CityPowerManager.dir
-/Users/abolfazlmirhajian/projects/finallCpp/build/CMakeFiles/edit_cache.dir
-/Users/abolfazlmirhajian/projects/finallCpp/build/CMakeFiles/rebuild_cache.dir

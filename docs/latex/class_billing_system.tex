@@ -1,0 +1,124 @@
+\doxysection{Billing\+System Class Reference}
+\hypertarget{class_billing_system}{}\label{class_billing_system}\index{BillingSystem@{BillingSystem}}
+
+
+{\ttfamily \#include $<$billing\+\_\+system.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_billing_system_af90485dadc77d6732783608936f97fc4}{Billing\+System}} ()
+\item 
+void \mbox{\hyperlink{class_billing_system_a8d61581c750e0f97087d445ab7dc6008}{issue\+Bills}} (std\+::vector$<$ \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} $>$ \&residential\+Subscribers, std\+::vector$<$ \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} $>$ \&commercial\+Subscribers, std\+::vector$<$ \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} $>$ \&industrial\+Subscribers, const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_tariff}{Tariff}} $>$ $>$ \&tariffs)
+\item 
+double \mbox{\hyperlink{class_billing_system_ad2b56fbf1a76f849f060deaff127b878}{calculate\+Residential\+Bill}} (const std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \&tariff)
+\item 
+double \mbox{\hyperlink{class_billing_system_ac1130c28d66ef5ef916e2528a83835f1}{calculate\+Commercial\+Bill}} (const std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \&tariff)
+\item 
+double \mbox{\hyperlink{class_billing_system_a59b053ab8193c0c4987606d8854d2b40}{calculate\+Industrial\+Bill}} (const std\+::map$<$ std\+::string, double $>$ \&tariff)
+\item 
+double \mbox{\hyperlink{class_billing_system_a53d156b159b97a89f32d451ea1e828e0}{get\+Rand\+Hours}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_billing_system_af90485dadc77d6732783608936f97fc4}\index{BillingSystem@{BillingSystem}!BillingSystem@{BillingSystem}}
+\index{BillingSystem@{BillingSystem}!BillingSystem@{BillingSystem}}
+\doxysubsubsection{\texorpdfstring{BillingSystem()}{BillingSystem()}}
+{\footnotesize\ttfamily \label{class_billing_system_af90485dadc77d6732783608936f97fc4} 
+Billing\+System\+::\+Billing\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ :\ rng(std::random\_device\ \{\}()),\ dist(0.0,\ 1.0)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_billing_system_ac1130c28d66ef5ef916e2528a83835f1}\index{BillingSystem@{BillingSystem}!calculateCommercialBill@{calculateCommercialBill}}
+\index{calculateCommercialBill@{calculateCommercialBill}!BillingSystem@{BillingSystem}}
+\doxysubsubsection{\texorpdfstring{calculateCommercialBill()}{calculateCommercialBill()}}
+{\footnotesize\ttfamily \label{class_billing_system_ac1130c28d66ef5ef916e2528a83835f1} 
+double Billing\+System\+::calculate\+Commercial\+Bill (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \&}]{tariff}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_billing_system_a59b053ab8193c0c4987606d8854d2b40}\index{BillingSystem@{BillingSystem}!calculateIndustrialBill@{calculateIndustrialBill}}
+\index{calculateIndustrialBill@{calculateIndustrialBill}!BillingSystem@{BillingSystem}}
+\doxysubsubsection{\texorpdfstring{calculateIndustrialBill()}{calculateIndustrialBill()}}
+{\footnotesize\ttfamily \label{class_billing_system_a59b053ab8193c0c4987606d8854d2b40} 
+double Billing\+System\+::calculate\+Industrial\+Bill (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, double $>$ \&}]{tariff}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_billing_system_ad2b56fbf1a76f849f060deaff127b878}\index{BillingSystem@{BillingSystem}!calculateResidentialBill@{calculateResidentialBill}}
+\index{calculateResidentialBill@{calculateResidentialBill}!BillingSystem@{BillingSystem}}
+\doxysubsubsection{\texorpdfstring{calculateResidentialBill()}{calculateResidentialBill()}}
+{\footnotesize\ttfamily \label{class_billing_system_ad2b56fbf1a76f849f060deaff127b878} 
+double Billing\+System\+::calculate\+Residential\+Bill (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \&}]{tariff}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_billing_system_a53d156b159b97a89f32d451ea1e828e0}\index{BillingSystem@{BillingSystem}!getRandHours@{getRandHours}}
+\index{getRandHours@{getRandHours}!BillingSystem@{BillingSystem}}
+\doxysubsubsection{\texorpdfstring{getRandHours()}{getRandHours()}}
+{\footnotesize\ttfamily \label{class_billing_system_a53d156b159b97a89f32d451ea1e828e0} 
+double Billing\+System\+::get\+Rand\+Hours (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_billing_system_a8d61581c750e0f97087d445ab7dc6008}\index{BillingSystem@{BillingSystem}!issueBills@{issueBills}}
+\index{issueBills@{issueBills}!BillingSystem@{BillingSystem}}
+\doxysubsubsection{\texorpdfstring{issueBills()}{issueBills()}}
+{\footnotesize\ttfamily \label{class_billing_system_a8d61581c750e0f97087d445ab7dc6008} 
+void Billing\+System\+::issue\+Bills (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_residential_subscriber}{Residential\+Subscriber}} $>$ \&}]{residential\+Subscribers}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{class_commercial_subscriber}{Commercial\+Subscriber}} $>$ \&}]{commercial\+Subscribers}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{class_industrial_subscriber}{Industrial\+Subscriber}} $>$ \&}]{industrial\+Subscribers}{, }\item[{const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_tariff}{Tariff}} $>$ $>$ \&}]{tariffs}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ subscriber\ :\ residentialSubscribers)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ totalConsumption\ =\ 0.0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ day\ =\ 0;\ day\ <\ 30;\ ++day)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ period\ =\ 0;\ period\ <\ 4;\ ++period)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ consumption\ =\ generateRandomConsumption()\ *\ getMultiplier(period);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ totalConsumption\ +=\ consumption;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{double}\ bill\ =\ calculateBill(totalConsumption,\ tariffs[0].get(),\ \textcolor{stringliteral}{"{}Residential"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ subscriber.setDebt(subscriber.getDebt()\ +\ bill);}
+\DoxyCodeLine{00061\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Residential\ subscriber\ "{}}\ <<\ subscriber.getName()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ subscriber.getLastName()\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ (Meter:\ "{}}\ <<\ subscriber.getMeterNumber()\ <<\ \textcolor{stringliteral}{"{})\ bill:\ \$"{}}\ <<\ bill\ <<\ std::endl;}
+\DoxyCodeLine{00063\ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ subscriber\ :\ commercialSubscribers)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{double}\ totalConsumption\ =\ 0.0;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ day\ =\ 0;\ day\ <\ 30;\ ++day)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ period\ =\ 0;\ period\ <\ 4;\ ++period)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ consumption\ =\ generateRandomConsumption()\ *\ getMultiplier(period);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ totalConsumption\ +=\ consumption;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ bill\ =\ calculateBill(totalConsumption,\ tariffs[1].get(),\ \textcolor{stringliteral}{"{}Commercial"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ subscriber.setDebt(subscriber.getDebt()\ +\ bill);}
+\DoxyCodeLine{00075\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Commercial\ subscriber\ "{}}\ <<\ subscriber.getName()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ subscriber.getLastName()\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ (Meter:\ "{}}\ <<\ subscriber.getMeterNumber()\ <<\ \textcolor{stringliteral}{"{})\ bill:\ \$"{}}\ <<\ bill\ <<\ std::endl;}
+\DoxyCodeLine{00077\ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ subscriber\ :\ industrialSubscribers)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ totalConsumption\ =\ 0.0;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ day\ =\ 0;\ day\ <\ 30;\ ++day)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ period\ =\ 0;\ period\ <\ 4;\ ++period)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ consumption\ =\ generateRandomConsumption()\ *\ getMultiplier(period);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ totalConsumption\ +=\ consumption;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{double}\ bill\ =\ calculateBill(totalConsumption,\ tariffs[2].get(),\ \textcolor{stringliteral}{"{}Industrial"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ subscriber.setDebt(subscriber.getDebt()\ +\ bill);}
+\DoxyCodeLine{00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Industrial\ subscriber\ "{}}\ <<\ subscriber.getName()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ subscriber.getLastName()\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ (Meter:\ "{}}\ <<\ subscriber.getMeterNumber()\ <<\ \textcolor{stringliteral}{"{})\ bill:\ \$"{}}\ <<\ bill\ <<\ std::endl;}
+\DoxyCodeLine{00091\ \ \ \}}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{billing__system_8hpp}{billing\+\_\+system.\+hpp}}\item 
+src/core/\mbox{\hyperlink{billing__system_8cpp}{billing\+\_\+system.\+cpp}}\end{DoxyCompactItemize}
