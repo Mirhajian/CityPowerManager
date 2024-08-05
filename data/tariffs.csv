@@ -1,0 +1,14 @@
+Type,Tier,Price
+Residential,0-100,777
+Residential,100-200,908
+Residential,200-300,1943
+Residential,300-500,2500
+Residential,500+,4000
+Commercial,0-500,1950
+Commercial,500-1000,4000
+Commercial,1000+,5000
+Industrial,light_pressure,410
+Industrial,medium_pressure,820
+Industrial,peak_pressure,1600
+Industrial,weekend_peak_pressure,820
+Industrial,reactive_power,1600

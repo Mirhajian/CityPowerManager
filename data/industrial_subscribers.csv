@@ -1,0 +1,4 @@
+Name,LastName,NationalID,MeterNumber,InstallationDate,UnitName,SupplyVoltage,ConnectionType,MeterMultiplier,TransformerRatio,Debt
+Factory A,Ltd,5566778899,IND001,2023-01-10,Unit1,11000,3-phase,2.5,100,0
+Plant B,Inc,6677889900,IND002,2023-03-05,Unit2,33000,3-phase,3,150,0
+Mill C,Corp,7788990011,IND003,2023-05-20,Unit3,22000,3-phase,2,120,0
