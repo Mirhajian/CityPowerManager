@@ -25,7 +25,17 @@
 var NAVTREE =
 [
   [ "City Power Manager", "index.html", [
-    [ "README", "readme.html", null ],
+    [ "City Power Manager", "md__r_e_a_d_m_e.html", [
+      [ "موارد مهم", "md__r_e_a_d_m_e.html#موارد-مهم", null ],
+      [ "معرفی", "md__r_e_a_d_m_e.html#معرفی", null ],
+      [ "قابلیت ها", "md__r_e_a_d_m_e.html#قابلیت-ها", null ],
+      [ "نحوه محاسبه قبض ها", "md__r_e_a_d_m_e.html#نحوه-محاسبه-قبض-ها", null ],
+      [ "واژگان", "md__r_e_a_d_m_e.html#واژگان", null ],
+      [ "نحوه کامپایل گیری", "md__r_e_a_d_m_e.html#نحوه-کامپایل-گیری", [
+        [ "پیش نیاز ها", "md__r_e_a_d_m_e.html#پیش-نیاز-ها", null ],
+        [ "ساختن فایل اجرایی", "md__r_e_a_d_m_e.html#ساختن-فایل-اجرایی", null ]
+      ] ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

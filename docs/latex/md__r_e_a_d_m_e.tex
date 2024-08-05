@@ -1,0 +1,196 @@
+\chapter{City Power Manager}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{City Power Manager@{City Power Manager}}
+\label{md__r_e_a_d_m_e_city-power-manager}%
+\Hypertarget{md__r_e_a_d_m_e_city-power-manager}%
+\hypertarget{md__r_e_a_d_m_e_موارد-مهم}{}\doxysection{\texorpdfstring{موارد مهم}{موارد مهم}}\label{md__r_e_a_d_m_e_موارد-مهم}
+
+\begin{DoxyItemize}
+\item فایل uml و شماتیک پروژه در مسیر زیر قرار دارند
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./docs/html/index.html\ این\ فایل\ را\ ران\ کنید\ تا\ پروژه\ را\ بهتر\ درک\ کنید}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_معرفی}{}\doxysection{\texorpdfstring{معرفی}{معرفی}}\label{md__r_e_a_d_m_e_معرفی}
+
+\begin{DoxyItemize}
+\item این پروژه برای پایان ترم درس برنامه نویسی پیشرفته دانشگاه صنعتی بیرجند است
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_قابلیت-ها}{}\doxysection{\texorpdfstring{قابلیت ها}{قابلیت ها}}\label{md__r_e_a_d_m_e_قابلیت-ها}
+
+\begin{DoxyItemize}
+\item {\bfseries{1. Submit New \doxylink{class_subscriber}{Subscriber}\+:}} اضافه کردن مشترک جدید
+\item {\bfseries{2. Display Subscribers\+:}} نمایش مشترکین برق
+\item {\bfseries{3. Edit \doxylink{class_subscriber}{Subscriber}\+:}} ویرایش مشترکین برق
+\item {\bfseries{4. Submit New Tariffs\+:}} ایجاد یک لیست تعرفه جدید
+\item {\bfseries{5. Display Tariffs\+:}} نمایش تعرفه ها
+\item {\bfseries{6. Edit Tariffs\+:}} ویرایش تعرفه ها
+\item {\bfseries{7. Billing Issuance\+:}} ایجاد قبض و صدور صورت حساب یک ماهه
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+ فایل های سورس و هدر این پروژه در دو پوشه زیر قرار دارند ‍‍‍ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./src\ :\ source\ files}
+\DoxyCodeLine{./include\ :\ .hpp\ header\ files}
+
+\end{DoxyCode}
+ فایل های دیتابیس در این مسیر هستند ‍‍‍ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./data/tariffs.csv:\ تعرفه\ ها}
+\DoxyCodeLine{./data/residential\_subscribers.csv:\ دیتابیس\ مشترکین\ خانگی}
+\DoxyCodeLine{./data/commercial\_subscribers.csv:\ دیتابیس\ مشترکین\ تجاری}
+\DoxyCodeLine{./data/industrial\_subscribers.csv:\ دیتابیس\ مشترکین\ صنعتی}
+
+\end{DoxyCode}
+ شمایل کلی پروژه
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.}
+\DoxyCodeLine{├──\ CMakeLists.txt}
+\DoxyCodeLine{├──\ README.md}
+\DoxyCodeLine{├──\ bin}
+\DoxyCodeLine{├──\ build\ \ \#\ فایل\ اجرایی\ به\ صورت\ پیشرفض\ درون\ این\ پوشه\ است}
+\DoxyCodeLine{├──\ data\ \ \#\ مسیر\ دیتابیس\ ها}
+\DoxyCodeLine{│  \ ├──\ commercial\_subscribers.csv\ \ \#\ دیتابیس\ تجاری}
+\DoxyCodeLine{│  \ ├──\ industrial\_subscribers.csv\ \ \#\ دیتابیس\ صنعتی}
+\DoxyCodeLine{│  \ ├──\ residential\_subscribers.csv\ \ \#\ دیتابیس\ خانگی}
+\DoxyCodeLine{│  \ └──\ tariffs.csv\ \ \#\ دیتابیس\ تعرفه\ ها}
+\DoxyCodeLine{├──\ docs}
+\DoxyCodeLine{│  \ ├──\ html}
+\DoxyCodeLine{│  \ │  \ └──\ index.html\ \ \#\ فایل\ شماتیک\ و\ نمودار\ زبان\ مدلسازی\ (یو\ ام\ ال)}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│  \ └──\ latex}
+\DoxyCodeLine{├──\ include\ \ \#\ مسیر\ فایل\ های\ هدر}
+\DoxyCodeLine{│  \ ├──\ core\ \ \#\ مسیر\ فایل\ های\ هسته\ ای\ نرم\ افزار}
+\DoxyCodeLine{│  \ │  \ ├──\ app.hpp\ \ \#\ هسته\ نرم\ افزار}
+\DoxyCodeLine{│  \ │  \ └──\ billing\_system.hpp\ \ \#\ فایل\ محاسبه\ قبض}
+\DoxyCodeLine{│  \ ├──\ models\ \ \#\ مسیر\ ساختمان\ داده\ و\ کلاس\ ها}
+\DoxyCodeLine{│  \ │  \ ├──\ commercial\_subscriber.hpp\ \ \#\ ساختار\ کلاس\ مشترکین\ تجاری}
+\DoxyCodeLine{│  \ │  \ ├──\ industrial\_subscriber.hpp\ \ \#\ ساختار\ کلاس\ مشترکین\ صنعتی}
+\DoxyCodeLine{│  \ │  \ ├──\ residential\_subscriber.hpp\ \ \#\ ساختار\ کلاس\ مشترکین\ خانگی}
+\DoxyCodeLine{│  \ │  \ ├──\ subscriber.hpp\ \ \#\ سختار\ کلاس\ مشترکین}
+\DoxyCodeLine{│  \ │  \ └──\ tariff.hpp\ \ \#\ ساختار\ کلاس\ تعرفه\ ها}
+\DoxyCodeLine{│  \ └──\ utils\ \ \#\ ابزار\ های\ کاربردی}
+\DoxyCodeLine{│  \ \ \ \ \ ├──\ ascii\_art.hpp\ \ \#\ زیبا\ سازی\ ترمینال}
+\DoxyCodeLine{│  \ \ \ \ \ └──\ file\_io.hpp\ \ \#\ برای\ هندل\ فایل\ های\ خارجی\ مانند\ دیتابیس\ ها}
+\DoxyCodeLine{└──\ src\ \ \#\ مسیر\ فایل\ های\ سورس}
+\DoxyCodeLine{\ \ \ \ ├──\ core}
+\DoxyCodeLine{\ \ \ \ │  \ ├──\ app.cpp}
+\DoxyCodeLine{\ \ \ \ │  \ └──\ billing\_system.cpp}
+\DoxyCodeLine{\ \ \ \ ├──\ main.cpp\ \ \#\ مین\ نرم\ افزار}
+\DoxyCodeLine{\ \ \ \ ├──\ models}
+\DoxyCodeLine{\ \ \ \ │  \ ├──\ commercial\_subscriber.cpp}
+\DoxyCodeLine{\ \ \ \ │  \ ├──\ industrial\_subscriber.cpp}
+\DoxyCodeLine{\ \ \ \ │  \ ├──\ residential\_subscriber.cpp}
+\DoxyCodeLine{\ \ \ \ │  \ ├──\ subscriber.cpp}
+\DoxyCodeLine{\ \ \ \ │  \ └──\ tariff.cpp}
+\DoxyCodeLine{\ \ \ \ └──\ utils}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ └──\ file\_io.cpp}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_نحوه-محاسبه-قبض-ها}{}\doxysection{\texorpdfstring{نحوه محاسبه قبض ها}{نحوه محاسبه قبض ها}}\label{md__r_e_a_d_m_e_نحوه-محاسبه-قبض-ها}
+انجام محاسبات قبض ها و دوره ها را این فایل انجام میدهد\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./src/core/billing\_system}
+
+\end{DoxyCode}
+ الگوریتم کلی\+:
+\begin{DoxyItemize}
+\item هر روز به چهار بخش تقسیم میشود (هر بخش ۶ ساعت)
+\item گذر این بخش ها بر عهده یک حلقه با تعداد تکرار ۴ مرتبه است
+\begin{DoxyItemize}
+\item مرتبه اول از ساعت ۱۲ بامداد تا ۶ صبح در نظر گرفته شده است و این ساعات میان باری در نظر گرفته شده اند که ضریب آن ها ۱ میباشد
+\item ساعات بعدی از ۶ صبح تا ۱۲ ظهر هستند که کم باری در نظر گرفته شده اند و ضریب آن ها ۰.\+۵ است
+\item ساعات ۱۲ ظهر تا ۱۸ بعد از ظهر نیز ساعات پر باری در نظر گرفته شده اند
+\item ساعات ۱۸ تا ۱۲ بامداد هم میان باری با ضریب ۱ لحاظ شده اند
+\end{DoxyItemize}
+\item یک متد رندم سازی یک عدد رندم بین ۱ و ۰ ایجاد میکند، این برای ایجاد یک مصرف کاملا رندم برای یک مشترک است تا طبیعی تر باشد
+\item این عدد در ۶ ضرب شده تا دوباره تبدیل به ساعت عادی شود و سپس در ضریب باری آن ساعت ضرب میشود
+\item تمام این پروسه ها داخل یک حلقه بالا تر با تعداد ۳۰ قرار دارند تا مصرف ۳۰ روز را شبیه سازی کنند
+\item سپس میزان مصرف با لیست تعرفه ها مقایسه شده و در ضریب پلکانی آن ضرب میشود و مبلغ بدست می آید
+\item همین پروسه تا حدودی برای مشترکین صنعتی صادق است اما چون تعرفه پلکانی ندارند قیمت کل در مبلغ ساعت باری که در آن قرار دارند ضرب میشود
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_واژگان}{}\doxysection{\texorpdfstring{واژگان}{واژگان}}\label{md__r_e_a_d_m_e_واژگان}
+معادل واژه های انگلیسی استفاده شده برای درک بهتر پروژه\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01.\ tariff\ :\ تعرفه}
+\DoxyCodeLine{02.\ subscriber\ :\ مشترک}
+\DoxyCodeLine{03.\ residential\ :\ خانگی}
+\DoxyCodeLine{04.\ commercial\ :\ تجاری}
+\DoxyCodeLine{05.\ industrial\ :\ صنعتی}
+\DoxyCodeLine{06.\ billing\ system\ :\ سیستم\ تولید\ قبض\ و\ دوره\ حساب}
+\DoxyCodeLine{}
+\DoxyCodeLine{::\ واژگان\ استفاده\ شده\ در\ دیتابیس\ ::}
+\DoxyCodeLine{07.\ meter\ number\ :\ شماره\ کنتور}
+\DoxyCodeLine{08.\ installation\ date\ :‌\ تاریخ\ نصب}
+\DoxyCodeLine{09.\ meter\ capacity\ :\ ظرفیت\ کنتور}
+\DoxyCodeLine{10.\ business\ licence\ :\ پروانه\ تجاری}
+\DoxyCodeLine{11.\ unit\ name\ :\ نام\ واحد}
+\DoxyCodeLine{12.\ supply\ voltage\ :\ ولتاژ\ تغذیه}
+\DoxyCodeLine{13.\ connection\ type\ :\ نوع\ انشعاب}
+\DoxyCodeLine{14.\ meter\ multiplier\ :\ ضریب\ کنتور}
+\DoxyCodeLine{15.\ transformer\ ratio\ :\ ضریب\ ترانس}
+\DoxyCodeLine{16.\ debt\ :\ بدهی\ ،\ مربوط\ به\ بدهی\ قبض}
+\DoxyCodeLine{17.\ type\ :\ نوع،\ منظور\ از\ نوع\ تعرفه(مسکونی\ یا\ تجاری\ یا\ صنعتی)}
+\DoxyCodeLine{18.\ tier\ :\ پلکان\ یا\ رتبه}
+\DoxyCodeLine{19.\ price\ :\ قیمت}
+\DoxyCodeLine{20.\ light\_pressure\ :\ کم\ باری}
+\DoxyCodeLine{21.\ medium\_pressure\ :\ میان\ باری}
+\DoxyCodeLine{22.\ peak\_pressure\ :\ پر\ باری}
+\DoxyCodeLine{23.\ weekend\_peak\_pressure\ :\ باری\ باری\ آخر\ هفته}
+\DoxyCodeLine{24.\ reactive\_power\ :\ نیروی\ راکتیو}
+\DoxyCodeLine{}
+\DoxyCodeLine{::\ واژگان\ استفاده\ شده\ در\ سایر\ بخش\ های\ برنامه\ ::}
+\DoxyCodeLine{25.\ period\ :\ بخش،\ منظور\ از\ یکی\ از\ بخش\ های\ چهارگانه\ روز\ که\ بالاتر\ اشاره\ شد}
+\DoxyCodeLine{26.\ depricated\ :\ منسوخ\ شده،\ برخی\ متد\ های\ داخل\ کد\ کامنت\ گذاری\ شده\ اند\ و\ مربوط\ به\ ورژن\ قدیمی\ تر\ برنامه\ هستند}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_نحوه-کامپایل-گیری}{}\doxysection{\texorpdfstring{نحوه کامپایل گیری}{نحوه کامپایل گیری}}\label{md__r_e_a_d_m_e_نحوه-کامپایل-گیری}
+
+\begin{DoxyItemize}
+\item با اینکه از پیش این پروژه کامپایل گرفته شده و فایل اجرایی ویندوز آن موجود است، در صورت تمایل میتوانید از این روش استفاده کنید\+: 
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_پیش-نیاز-ها}{}\doxysubsection{\texorpdfstring{پیش نیاز ها}{پیش نیاز ها}}\label{md__r_e_a_d_m_e_پیش-نیاز-ها}
+
+\begin{DoxyItemize}
+\item C++ compiler (e.\+g., g++, clang++)
+\item CMake (از سایت رسمی دانلود کنید)
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_ساختن-فایل-اجرایی}{}\doxysubsection{\texorpdfstring{ساختن فایل اجرایی}{ساختن فایل اجرایی}}\label{md__r_e_a_d_m_e_ساختن-فایل-اجرایی}
+
+\begin{DoxyEnumerate}
+\item دانلود پروژه\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/Mirhajian/CityPowerManager.git}
+\DoxyCodeLine{cd\ CityPowerManager}
+
+\end{DoxyCode}
+
+\item وارد پوشه build شوید\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ build}
+
+\end{DoxyCode}
+
+\item با استفاده از cmake فایل های سازنده را درست کنید
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..}
+
+\end{DoxyCode}
+
+\item پروژه را کامپایل بگیرید
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ .}
+
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}
