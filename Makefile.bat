@@ -26,8 +26,10 @@ REM Compile and link
 
 if %ERRORLEVEL% neq 0 (
   echo Build failed!
+  pause
   exit /b %ERRORLEVEL%
 ) else (
   echo Build succeeded!
   echo Check the ./build for the .exe
+  pause
 )
