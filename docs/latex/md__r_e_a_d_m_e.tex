@@ -6,6 +6,7 @@
 
 \begin{DoxyItemize}
 \item فایل uml و شماتیک پروژه در مسیر زیر قرار دارند
+\item برای کامپایل گرفتن در ویندوز فایل Makefile.\+bat را ران کنید، نتایج در پوشه build تولید خواهد شد
 \end{DoxyItemize}
 
 
@@ -150,11 +151,12 @@
 \DoxyCodeLine{26.\ depricated\ :\ منسوخ\ شده،\ برخی\ متد\ های\ داخل\ کد\ کامنت\ گذاری\ شده\ اند\ و\ مربوط\ به\ ورژن\ قدیمی\ تر\ برنامه\ هستند}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_نحوه-کامپایل-گیری}{}\doxysection{\texorpdfstring{نحوه کامپایل گیری}{نحوه کامپایل گیری}}\label{md__r_e_a_d_m_e_نحوه-کامپایل-گیری}
+ \hypertarget{md__r_e_a_d_m_e_نحوه-کامپایل-گرفتن-برای-ویندوز}{}\doxysection{\texorpdfstring{نحوه کامپایل گرفتن برای ویندوز}{نحوه کامپایل گرفتن برای ویندوز}}\label{md__r_e_a_d_m_e_نحوه-کامپایل-گرفتن-برای-ویندوز}
 
 \begin{DoxyItemize}
-\item با اینکه از پیش این پروژه کامپایل گرفته شده و فایل اجرایی ویندوز آن موجود است، در صورت تمایل میتوانید از این روش استفاده کنید\+: 
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_پیش-نیاز-ها}{}\doxysubsection{\texorpdfstring{پیش نیاز ها}{پیش نیاز ها}}\label{md__r_e_a_d_m_e_پیش-نیاز-ها}
+\item برای کامپایل گرفتن در ویندوز فقط کافی است فایل Makefile.\+bat را ران کنید، خروجی در پوشه build ساخته خواهد شد
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_نحوه-کامپایل-گرفتن-بدون-فایل-bat}{}\doxysection{\texorpdfstring{نحوه کامپایل گرفتن بدون فایل bat\+:}{نحوه کامپایل گرفتن بدون فایل bat\+:}}\label{md__r_e_a_d_m_e_نحوه-کامپایل-گرفتن-بدون-فایل-bat}
+\hypertarget{md__r_e_a_d_m_e_پیش-نیاز-ها}{}\doxysubsection{\texorpdfstring{پیش نیاز ها}{پیش نیاز ها}}\label{md__r_e_a_d_m_e_پیش-نیاز-ها}
 
 \begin{DoxyItemize}
 \item C++ compiler (e.\+g., g++, clang++)
@@ -169,14 +171,17 @@
 
 \end{DoxyCode}
 
-\item وارد پوشه build شوید\+:
+\item مسیری به نام build بسازید و وارد آن شوید\+:
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
 \DoxyCodeLine{cd\ build}
 
 \end{DoxyCode}
 
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
 \item با استفاده از cmake فایل های سازنده را درست کنید
 
 

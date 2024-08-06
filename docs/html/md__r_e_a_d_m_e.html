@@ -104,6 +104,7 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 موارد مهم</h1>
 <ul>
 <li>فایل uml و شماتیک پروژه در مسیر زیر قرار دارند</li>
+<li>برای کامپایل گرفتن در ویندوز فایل Makefile.bat را ران کنید، نتایج در پوشه build تولید خواهد شد</li>
 </ul>
 <div class="fragment"><div class="line">./docs/html/index.html این فایل را ران کنید تا پروژه را بهتر درک کنید</div>
 </div><!-- fragment --> <h1><a class="anchor" id="معرفی"></a>
@@ -220,11 +221,13 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 <div class="line">:: واژگان استفاده شده در سایر بخش های برنامه ::</div>
 <div class="line">25. period : بخش، منظور از یکی از بخش های چهارگانه روز که بالاتر اشاره شد</div>
 <div class="line">26. depricated : منسوخ شده، برخی متد های داخل کد کامنت گذاری شده اند و مربوط به ورژن قدیمی تر برنامه هستند</div>
-</div><!-- fragment --><h1><a class="anchor" id="نحوه-کامپایل-گیری"></a>
-نحوه کامپایل گیری</h1>
+</div><!-- fragment --> <h1><a class="anchor" id="نحوه-کامپایل-گرفتن-برای-ویندوز"></a>
+نحوه کامپایل گرفتن برای ویندوز</h1>
 <ul>
-<li>با اینکه از پیش این پروژه کامپایل گرفته شده و فایل اجرایی ویندوز آن موجود است، در صورت تمایل میتوانید از این روش استفاده کنید: </li>
+<li>برای کامپایل گرفتن در ویندوز فقط کافی است فایل Makefile.bat را ران کنید، خروجی در پوشه build ساخته خواهد شد</li>
 </ul>
+<h1><a class="anchor" id="نحوه-کامپایل-گرفتن-بدون-فایل-bat"></a>
+نحوه کامپایل گرفتن بدون فایل bat:</h1>
 <h2><a class="anchor" id="پیش-نیاز-ها"></a>
 پیش نیاز ها</h2>
 <ul>
@@ -237,9 +240,12 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 <li>دانلود پروژه: <div class="fragment"><div class="line">git clone https://github.com/Mirhajian/CityPowerManager.git</div>
 <div class="line">cd CityPowerManager</div>
 </div><!-- fragment --></li>
-<li><p class="startli">وارد پوشه build شوید:</p>
-<div class="fragment"><div class="line">cd build</div>
+<li><p class="startli">مسیری به نام build بسازید و وارد آن شوید:</p>
+<div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
 </div><!-- fragment --></li>
+</ol>
+<ol type="1">
 <li><p class="startli">با استفاده از cmake فایل های سازنده را درست کنید</p>
 <div class="fragment"><div class="line">cmake ..</div>
 </div><!-- fragment --></li>

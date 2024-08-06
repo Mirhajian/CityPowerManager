@@ -504,7 +504,7 @@ void App::displaySubscribers(char option) {
 }
 
 void App::clearScreen() const {
-#ifdef WIN_32
+#ifdef _WIN32
   system("cls");
 #else
   system("clear");
